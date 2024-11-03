@@ -1,18 +1,39 @@
-<div class="container mt-4">
-  <table class="table table-striped">
+<div class="container">
+  <h1 class="titulo">Vivero El Otoño</h1>
+
+  <hr>
+  
+  <div class="banner">
+    <img src="assets/portada.svg" alt="Vivero El Otoño" class="img-fluid">
+  </div>
+
+  <hr>
+
+  <table class="table table-striped mt-4">
     <thead class="table-dark">
       <tr>
-        <th scope="col">Nombre Común</th>
+        <th scope="col">#</th>
+        <th scope="col">Nombre común</th>
         <th scope="col">Tipo</th>
         <th scope="col">Clima</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let planta of plantas">
-        <td>{{planta.nombre_comun}}</td>
-        <td>{{planta.tipo}}</td>
-        <td>{{planta.clima}}</td>
+      <tr *ngFor="let planta of plantas; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ planta.nombre_comun }}</td>
+        <td>{{ planta.tipo }}</td>
+        <td>{{ planta.clima }}</td>
       </tr>
     </tbody>
   </table>
+
+  <div class="totales mt-3">
+    <p>Total plantas de interior: {{ obtenerTotalPorTipo('Interior') }}</p>
+    <p>Total plantas de exterior: {{ obtenerTotalPorTipo('Exterior') }}</p>
+  </div>
+
+  <div class="footer text-center mt-4">
+    <p>Contact us: +57 3102105253 - info&#64;viveroelotonio.com - &#64;viveroelotonio</p>
+  </div>
 </div>

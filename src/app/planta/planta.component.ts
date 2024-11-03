@@ -8,7 +8,6 @@ import { PlantaService } from './planta.service';
   styleUrls: ['./planta.component.css']
 })
 export class PlantaComponent implements OnInit {
-
   plantas: Planta[] = [];
 
   constructor(private plantaService: PlantaService) { }
@@ -19,4 +18,7 @@ export class PlantaComponent implements OnInit {
     });
   }
 
+  obtenerTotalPorTipo(tipo: string): number {
+    return this.plantas.filter(planta => planta.tipo === tipo).length;
+  }
 }
